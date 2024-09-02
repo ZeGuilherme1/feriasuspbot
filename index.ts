@@ -2,6 +2,7 @@ import { BskyAgent } from '@atproto/api';
 import * as dotenv from 'dotenv';
 import { CronJob } from 'cron';
 import * as process from 'process';
+import express from 'express';
 
 dotenv.config();
 
@@ -9,7 +10,7 @@ const agent = new BskyAgent({
   service: 'https://bsky.social',
 });
 
-function getDiasRestantes(): number {
+function getDiasRestantes(): number { 
   const hoje = new Date();
   const dataAlvo = new Date('2024-12-12');
   const diffTime = dataAlvo.getTime() - hoje.getTime();
@@ -43,3 +44,9 @@ diasCounter();
 console.log("BOT iniciado. Postando a cada 24 horas...");
 job.start();
 
+const app = express();
+const PORT = process.env.PORT || 10000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor ouvindo na porta ${PORT}`);
+});
