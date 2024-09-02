@@ -41,7 +41,5 @@ const scheduleExpressionDaily = '0 0 * * *';
 const job = new CronJob(scheduleExpressionDaily, diasCounter);
 diasCounter();
 console.log("BOT iniciado. Postando a cada 24 horas...");
-console.log('Username:', process.env.BLUESKY_USERNAME);
-console.log('Password:', process.env.BLUESKY_PASSWORD);
 job.start();
 
