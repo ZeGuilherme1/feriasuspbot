@@ -1,3 +1,4 @@
+import express from 'express';
 import { BskyAgent } from '@atproto/api';
 import * as dotenv from 'dotenv';
 import { CronJob } from 'cron';
@@ -5,13 +6,12 @@ import * as process from 'process';
 
 dotenv.config();
 
-let diasRestantes = 102 ; 
-
+let diasRestantes = 102 ;       
 const agent = new BskyAgent({
   service: 'https://bsky.social',
 });
 
-async function diasCounter() {
+async function diasCounter() {  
   try {
     await agent.login({ identifier: process.env.BLUESKY_USERNAME!, password: process.env.BLUESKY_PASSWORD! });
 
@@ -29,10 +29,20 @@ async function diasCounter() {
   }
 }
 
-
 const scheduleExpressionDaily = '0 0 * * *'; 
 
 const job = new CronJob(scheduleExpressionDaily, diasCounter);
-diasCounter()
+diasCounter();
 console.log("BOT iniciado. Postando a cada 24 horas...");
 job.start();
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('Bot está funcionando!');
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor está escutando na porta ${PORT}`);
+});
