@@ -4,11 +4,13 @@
 
 > Você pode seguir o bot nas seguintes páginas:
 > 
+> Mastodon: <a rel="me" href="https://botsin.space/@feriasdauspbot">https://botsin.space/@feriasdauspbot</a>
+>  
 > Bluesky: [https://bsky.app/profile/feriasdauspbot.bsky.social](https://bsky.app/profile/feriasdauspbot.bsky.social)
-> Mastodon: [https://botsin.space/@feriasdauspbot](https://botsin.space/@feriasdauspbot)
 >
 > Você pode encontrar o desenvolvedor em: 
 > [https://bsky.app/profile/zeguilhermee.bsky.social](https://bsky.app/profile/zeguilhermee.bsky.social)
+> 
 > [https://idtech.space/users/doomguy](https://idtech.space/users/doomguy)
 
 
