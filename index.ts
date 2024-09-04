@@ -1,6 +1,5 @@
 import { BskyAgent } from '@atproto/api';
 import * as dotenv from 'dotenv';
-import { CronJob } from 'cron';
 import * as process from 'process';
 import { createRestAPIClient} from 'masto';
 import cron from 'node-cron';
@@ -54,10 +53,8 @@ cron.schedule('0 12 * * *', diasCounter,{
   timezone: 'America/Sao_Paulo'
 });
 
-const job = new CronJob(cron.schedule, diasCounter);
 diasCounter();
 console.log("Bot iniciado. Postando a cada 24 horas!");
-job.start();
 
 const app = express();
 const PORT = process.env.PORT || 10000;
