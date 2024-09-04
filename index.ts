@@ -53,11 +53,10 @@ cron.schedule('0 12 * * *', diasCounter,{
   timezone: 'America/Sao_Paulo'
 });
 
-diasCounter();
 console.log("Bot iniciado. Postando a cada 24 horas!");
 
 const app = express();
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => {
   console.log(`Servidor ouvindo na porta ${PORT}`);
